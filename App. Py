@@ -1,6 +1,76 @@
+from flask import Flask
 import os
 
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return """
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend eSports</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background: #6c2cff;
+            padding: 25px 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .card {
+            margin: 30px 15px;
+            padding: 25px;
+            background: #1e1e1e;
+            border-radius: 15px;
+        }
+
+        .contact {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+
+        a {
+            color: #8f6cff;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎮 Legend eSports</h1>
+    <p>Free Fire • Gaming • eSports</p>
+</header>
+
+<div class="card">
+    <h2>🔥 Welcome to Legend eSports</h2>
+    <p>Official gaming and eSports website.</p>
+
+    <div class="contact">
+        <h2>📞 Contact Me</h2>
+        <p>📱 +91 92748 82937</p>
+        <p>📱 +91 812827 5398</p>
+    </div>
+</div>
+
+</body>
+</html>
+"""
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 100
-app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
 
